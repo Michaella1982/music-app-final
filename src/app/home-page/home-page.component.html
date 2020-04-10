@@ -1,0 +1,28 @@
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<style>
+    .headline{
+        font-family:Lobster;
+    }
+    .page-layout{
+        background:linear-gradient(45deg, #CCFFFF, #FFFFCC);
+    }
+    
+
+
+</style>
+
+<html class="html">
+<header class="page-layout">
+<!-- banner-->
+    <h1 class="headline">Welcome to Virtual Crates!</h1>
+<!--greeting-->
+    <p>This is an app to help store and access information about your record collection </p>
+</header>
+
+<body>
+<!--button to crates-->
+    <button type="button" button color="#FF9999" [routerLink]="['crates']">View My Crates</button>
+<!--button to wishlist-->
+    <button type="button" button color="#FF9999" [routerLink]="['wishlist']"> Wishlist</button>
+</body>
+</html>
