@@ -1,0 +1,46 @@
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<style>
+    .headline {
+        font-family: Lobster;
+        background: linear-gradient(45deg, #cc66ff, #CCFFFF, #FFFFCC, #ff9999);
+    }
+</style>
+
+
+<!--banner-->
+<header>
+    <h1 class="headline">Update My Crates</h1>
+</header>
+
+<body>
+    <!--crate form-->
+
+    <div class="inputs" formGroupName="albumData" novalidate>
+        <form [formGroup]="albumForm" (ngSubmit)="onSubmit()">
+            <!--inputs-->
+            <input type="text" placeholder="Title" formControlName="title" />
+            <span *ngIf="!albumForm.get('title').valid && albumForm.get('title').touched">Please enter Album
+                Title</span>
+            <input type="text" placeholder="Artist" formControlName="artist" />
+            <span *ngIf="!albumForm.get('artist').valid && albumForm.get('artist').touched">Please enter Artist</span>
+            <input type="text" placeholder="Label" formControlName="label" />
+            <span *ngIf="!albumForm.get('label').valid && albumForm.get('label').touched">Please enter Record
+                <Label></Label></span>
+            <input type="text" placeholder="Year Released" formControlName="yearReleased" />
+            <span *ngIf="!albumForm.get('yearReleased').valid && albumForm.get('yearReleased').touched">Please enter the
+                year released</span>
+            <input type="text" placeholder="Catalog Number" formControlName="catalogNumber" />
+            <span *ngIf="!albumForm.get('catalogNumber').valid && albumForm.get('catalogNumber').touched">Please enter a
+                catalog number</span>
+            <input type="text" formControlName="Genre" placeholder="genre" />
+            <span *ngIf="!albumForm.get('genre').valid && albumForm.get('genre').touched">Please enter a genre</span>
+            <!--buttons-->
+            <div class="button-row">
+                <button type="submit" class="btn btn-primary" [disabled]="!albumForm.valid"
+                    [routerLink]="['show-collection']">
+                    save
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
