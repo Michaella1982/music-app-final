@@ -1,0 +1,20 @@
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<style>
+    .headline {
+        font-family: Lobster;
+        background: linear-gradient(45deg, #cc66ff, #CCFFFF, #FFFFCC, #ff9999);
+    }
+</style>
+
+
+<!--banner-->
+<header>
+    <h1 class="headline">Notes</h1>
+   
+</header>
+<body class="body">
+    <div class= "buttons container>">
+    <!--button to crates-->
+    <button type= "button" class="btn btn-primary" [disabled]="!albumForm.valid" [routerLink]="['wishlist']">Save to Wishlist</button>
+    </div>
+</body>

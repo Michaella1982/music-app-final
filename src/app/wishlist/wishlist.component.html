@@ -1,1 +1,38 @@
-<p>wishlist works!</p>
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<style>
+    .headline {
+        font-family: Lobster;
+        background: linear-gradient(45deg, #cc66ff, #CCFFFF, #FFFFCC, #ff9999);
+    }
+</style>
+
+
+<!--banner-->
+<header>
+    <h1 class="headline">Notes</h1>
+   
+</header>
+
+<body>
+    <!--crate form-->
+
+    <div class="inputs" formGroupName="albumData" novalidate>
+        <p>a place to take notes on to-be-obtained music</p>
+        <form [formGroup]="albumForm" (ngSubmit)="onSubmit()">
+            <!--inputs-->
+            <input type="text" placeholder="Title" formControlName="title" />
+            <span *ngIf="!albumForm.get('title').valid && albumForm.get('title').touched">Please enter Album Title</span>
+            <input type="text" placeholder="Artist" formControlName="artist" />
+            <span *ngIf="!albumForm.get('artist').valid && albumForm.get('artist').touched">Please enter Artist</span>
+            <input type="text" placeholder="Label" formControlName="label" />
+            <textarea class="notes" type="text" name="comments" placeholder="notes" rows="3" cols="30">Notes</textarea>
+             <!--buttons-->
+            <div class="button-row">
+                <button type= "submit" class="btn btn-primary" [disabled]="!albumForm.valid" [routerLink]="['show-wishlist']">Save to Wishlist</button>
+                <button type= "button" class="btn btn-primary">Reset Form</button>
+                   
+               
+            </div>
+        </form>
+    </div>
+</body>

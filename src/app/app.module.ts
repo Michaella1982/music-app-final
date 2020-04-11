@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { CratesComponent } from './crates/crates.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { ShowCratesComponent } from './show-crates/show-crates.component';
+import { ShowWishlistComponent } from './show-wishlist/show-wishlist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     CratesComponent,
-    WishlistComponent
+    WishlistComponent,
+    ShowCratesComponent,
+    ShowWishlistComponent
   ],
   imports: [
     BrowserModule,
