@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
+import { SharedService } from "../shared.service";
 
 @Component({
   selector: 'app-show-crates',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./show-crates.component.scss']
 })
 export class ShowCratesComponent implements OnInit {
+  data:any;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
+    
   }
+
+
+
+  
 
 }

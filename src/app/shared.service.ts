@@ -18,6 +18,6 @@ currentData = this.dataSource.asObservable();
 constructor() { }
 
 changeData(data: any) {
-  this.dataSource.next(data);
-  }
+this.dataSource.next(data);
+}
 }
