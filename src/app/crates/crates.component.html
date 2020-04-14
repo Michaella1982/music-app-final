@@ -1,4 +1,5 @@
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<!--inline styling-->
 <style>
     .headline {
         font-family: Lobster;
@@ -7,38 +8,59 @@
 </style>
 
 
-<!--banner-->
+<!--page title banner-->
 <header>
     <h1 class="headline">Update My Crates</h1>
 </header>
 
-
-
 <body>
+
     <!--crate form-->
-    
-   
+    <div class="form-container">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <div class="form-group">
+        <!--input for title-->
+                
+                <input type="text" id="title" placeholder="title" class="form-control" ngModel name="title" #title="ngModel" required>
+                <span class="help-block" *ngIf="!title.Valid && title.touched">please enter a valid title, Homie.</span>
+                
 
-    <div class="inputs" formGroupName="albumData" novalidate>
-        <form [formGroup]="albumForm" (ngSubmit)="onSubmit()">
-            <!--inputs-->
-            <input type="text" placeholder="Title" formControlName="title" />
-            <span *ngIf="!albumForm.get('title').valid && albumForm.get('title').touched">Please enter Album Title</span>
-            <input type="text" placeholder="Artist" formControlName="artist" />
-            <span *ngIf="!albumForm.get('artist').valid && albumForm.get('artist').touched">Please enter Artist</span>
-            <input type="text" placeholder="Label" formControlName="label" />
-            <input type="text" placeholder="Year Released" formControlName="yearReleased" />
-            <input type="text" placeholder="Catalog Number" formControlName="catalogNumber" />
-            <input type="text" formControlName="Genre" placeholder="genre" />
+                <br>
+                
+        <!-- input for artist-->
+                
+                <input type="text" id="artist" placeholder="artist" class="form-control" ngModel name="artist" #artist="ngModel" required>
+                <span class="help-block" *ngIf="!artist.Valid && artist.touched">please enter a valid artist, Homie.</span>
+                
             
-            <!--buttons-->
-            <div class="button-row">
-                <button type="submit" class="btn btn-primary"  id=test [disabled]="!albumForm.valid" [routerLink]="['show-crates']" (click)="changeData()">
-                    Add to Crates
-                </button>
-
-
             </div>
         </form>
-    </div>
+    </div>   
+        
+            
+            <input type="text" placeholder="label" class="form-control" [(ngModel)]="label" formControlName="label">
+           
+            
+            <input type="number" placeholder="year released" class="form-control" [(ngModel)]="yearReleased">
+            
+           
+            <input type="text" placeholder="catalog number" class="form-control" [(ngModel)]="catalogNumber">
+          
+           
+            <input type="text" placeholder="genre" formControlName="Genre"  [(ngModel)]="genre" ngModel name="genre">
+
+        
+
+   
+
+        <!--buttons-->
+        <div class="button-row">
+            <button type="submit" class="btn btn-primary" [disabled]="!f.valid"
+                [routerLink]="['/show-crates']" (click)="changeData()">
+                Add to Crates
+            </button>
+            </div>
+        
+   
 </body>
+            

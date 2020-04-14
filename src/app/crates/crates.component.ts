@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { FormsModule, NgModel } from '@angular/forms';
 import { Router, NavigationStart } from '@angular/router';
 import { SharedService } from '../shared.service';
 import { filter } from "rxjs/operators";
-import { Observable } from "rxjs";
+import { Observable } from "rxjs"; 
+import { NgForm } from '@angular/forms';
 
 
 
@@ -14,8 +16,10 @@ import { Observable } from "rxjs";
   styleUrls: ['./crates.component.scss']
 })
 export class CratesComponent implements OnInit {
-  albumForm: FormGroup;
+  AlbumForm: FormGroup;
   data: any;
+  
+  submitted = false;
   navStart: Observable<NavigationStart>;
   constructor(private router: Router, private sharedData: SharedService) {
     this.navStart = router.events.pipe(
@@ -26,27 +30,25 @@ export class CratesComponent implements OnInit {
   ngOnInit() {
     this.sharedData.currentData.subscribe(data => (this.data = data));
     this.navStart.subscribe(evt =>
-      console.log("data is moving between components")
+      console.log("Sweeeeet! Data is being passed")
     );
 
   }
-  changeData() {
-    this.sharedData.changeData({ name: "David Bowie" });
-    this.router.navigate(["show-crates"]);
-  }
-
   createFormGroup() {
-    return new FormGroup({
-      AlbumData: new FormGroup({
+    this.AlbumForm= new FormGroup({
         title: new FormControl(),
         artist: new FormControl(),
         label: new FormControl(),
         genre: new FormControl(),
         yearReleased: new FormControl(),
         catalogNumber: new FormControl(),
-      }),
-      requestType: new FormControl(),
-      text: new FormControl(),
-    })
+      })
+  }
+
+  onSubmit(form:NgForm) {
+    console.log(form);
   }
 }
+
+
+      

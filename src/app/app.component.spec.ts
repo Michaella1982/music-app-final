@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'music-app-final'`, () => {
+  it(`should have as title 'Virtual Crates'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('music-app-final');
+    expect(app.title).toEqual('Virtual Crates');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('music-app-final app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('Virtual Crates app is running!');
   });
 });

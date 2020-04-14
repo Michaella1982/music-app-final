@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { SharedService } from './shared.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'music-app-final';
+  albumData= new FormControl('');
+
+  title = 'Virtual Crates';
 }

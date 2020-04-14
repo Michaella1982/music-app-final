@@ -3,7 +3,7 @@ import { Router } from "@angular/router";
 import { SharedService } from "../shared.service";
 
 @Component({
-  selector: 'app-show-crates',
+  selector: 'show-crates',
   templateUrl: './show-crates.component.html',
   styleUrls: ['./show-crates.component.scss']
 })
@@ -13,7 +13,16 @@ export class ShowCratesComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit() {
+
+
+
     
+  }
+
+  
+  changePage() {
+    
+    this.router.navigate(["crates"]);
   }
 
 

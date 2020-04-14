@@ -5,18 +5,24 @@
         background: linear-gradient(45deg, #cc66ff, #CCFFFF, #FFFFCC, #ff9999);
     }
 </style>
- 
+
 <!--banner-->
 <header>
     <h1 class="headline">My Crates</h1>
-    
-   
-  
-   
+
+
+
+
 </header>
+
+
 <body class="body">
-    <div class= "buttons container>">
-    <!--button to crates-->
-    <button type= "button" id= test class="btn btn-primary" [routerLink]="['crates']" >Add an Album</button>
+    
+    <div class="data container">
+ 
+    </div>
+    <div class="buttons container>">
+        
+        <button type="primary" id=test class="btn btn-primary" [routerLink]="['/crates']" (click)="changePage()">Add an Album</button>
     </div>
 </body>
