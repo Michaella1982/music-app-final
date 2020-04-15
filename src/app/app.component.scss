@@ -1,0 +1,80 @@
+$base-color:#ccffff;
+
+  
+  h1{
+      padding-bottom: 10px;
+      font: 150%;
+      font-family:monospace;
+      text-align:auto;
+      color:#000077;
+  }
+  p{
+    color:purple;
+    text-align:auto;
+    font-family:monospace;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #b775fa;
+  }
+  
+  li {
+    
+      display: inline;
+      float: left;
+      
+      
+
+  }
+  
+  li a {
+    display: block;
+    color: rgb(4, 4, 36);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: purple;
+  }
+  .body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: relative;
+    background-color:#ccffff;
+
+  }
+
+
+  .buttons-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+
+  .btn-primary {
+    margin: 5px;
+    padding-top:5px;
+    color:rgb(4, 4, 36);
+    border-radius: 1em;
+    background-color:#ff9999;
+    font-family:Lobster;
+    padding: 16px 25px;
+    border: none;
+    
+    
+  }
+  .btn-primary:hover{
+    color:purple;
+    
+  }
+  
+    

@@ -12,55 +12,60 @@
 <header>
     <h1 class="headline">Update My Crates</h1>
 </header>
-
 <body>
-
-    <!--crate form-->
+<!--new crate form-->
     <div class="form-container">
         <form (ngSubmit)="onSubmit(f)" #f="ngForm">
             <div class="form-group">
-        <!--input for title-->
-                
-                <input type="text" id="title" placeholder="title" class="form-control" ngModel name="title" #title="ngModel" required>
+                <!--input for title-->
+
+                <input type="text" id="title" placeholder="title" class="form-control" ngModel name="title"
+                    #title="ngModel" required>
                 <span class="help-block" *ngIf="!title.Valid && title.touched">please enter a valid title, Homie.</span>
-                
+
 
                 <br>
+
+                <!-- input for artist-->
+
+                <input type="text" id="artist" placeholder="artist" class="form-control" ngModel name="artist"
+                    #artist="ngModel" required>
+                <span class="help-block" *ngIf="!artist.Valid && artist.touched">please enter a valid artist,
+                    Homie.</span>
+
+                <input type="text" placeholder="label" class="form-control" [(ngModel)]="label" formControlName="label">
+
+
+                <input type="text" placeholder="year released" class="form-control" [(ngModel)]="yearReleased">
                 
-        <!-- input for artist-->
                 
-                <input type="text" id="artist" placeholder="artist" class="form-control" ngModel name="artist" #artist="ngModel" required>
-                <span class="help-block" *ngIf="!artist.Valid && artist.touched">please enter a valid artist, Homie.</span>
+                <input type="text" placeholder="catalog number" class="form-control" [(ngModel)]="catalogNumber">
                 
-            
-            </div>
+                
+                <input type="text" placeholder="genre" formControlName="Genre" [(ngModel)]="genre" ngModel name="genre">
+                
+             
+             <!--buttons--> 
+                <div class="button-row">
+                    <button type="submit" class="btn btn-primary" [disabled]="!f.valid" routerLink="['/show-crates']"
+                        (click)="changeData()">
+                        Add to Crates
+                    </button>
+                </div>
+               
+
+            </div> 
         </form>
-    </div>   
-        
-            
-            <input type="text" placeholder="label" class="form-control" [(ngModel)]="label" formControlName="label">
-           
-            
-            <input type="number" placeholder="year released" class="form-control" [(ngModel)]="yearReleased">
-            
-           
-            <input type="text" placeholder="catalog number" class="form-control" [(ngModel)]="catalogNumber">
-          
-           
-            <input type="text" placeholder="genre" formControlName="Genre"  [(ngModel)]="genre" ngModel name="genre">
-
-        
-
-   
-
-        <!--buttons-->
-        <div class="button-row">
-            <button type="submit" class="btn btn-primary" [disabled]="!f.valid"
-                [routerLink]="['/show-crates']" (click)="changeData()">
-                Add to Crates
-            </button>
-            </div>
-        
-   
+    </div>
 </body>
-            
+   
+
+
+    
+
+
+
+
+    
+    
+ 

@@ -1,2 +1,28 @@
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<style>
+    .headline {
+        font-family: Lobster;
+    }
+    .ul{
+        font-family:Lobster;
+    }
 
+    .page-layout {
+       background: linear-gradient(45deg,#cc99ff, #CCFFFF, #FFFFCC, #ff9999);
+    } 
+    .body {
+        background: #ffffcc;
+    }
+    
+</style>
+
+<div class= "ul">
+    <ul>
+        <li><a class=“nav-link” [routerLink]="'/crates'" routerLinkActive=“active”>Add an Album</a></li>
+        <li><a class=“nav-link” [routerLink]="'/show-crates'" routerLinkActive=“active”>Show My Crates</a></li>
+        <li><a class=“nav-link” [routerLink]="'wishlist'" routerLinkActive=“active”>Add to Wishlist</a></li> 
+        <li><a class=“nav-link” [routerLink]="'/show-wishlist'" routerLinkActive=“active”>Show My Wishlist</a></li> 
+        
+    </ul>
+</div>
 <router-outlet></router-outlet>

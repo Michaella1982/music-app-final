@@ -7,22 +7,12 @@
 </style>
 
 <!--banner-->
-<header>
-    <h1 class="headline">My Crates</h1>
-
-
-
-
-</header>
-
-
-<body class="body">
-    
-    <div class="data container">
- 
-    </div>
+    <header>
+        <h1 class="headline">My Crates</h1>
+    </header>
+<body>
+    <pre>{{json}}</pre>
     <div class="buttons container>">
-        
-        <button type="primary" id=test class="btn btn-primary" [routerLink]="['/crates']" (click)="changePage()">Add an Album</button>
+        <button type="primary" id=test class="btn btn-primary" routerLink="['crates']">Add an Album</button>
     </div>
 </body>

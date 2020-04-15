@@ -9,39 +9,12 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { ShowCratesComponent } from './show-crates/show-crates.component';
 import { ShowWishlistComponent } from './show-wishlist/show-wishlist.component';
 import { RouterModule } from '@angular/router';
-import { Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 
 
-const appRoutes: Routes = [
-  
-  {
-    path: '',
-    component: HomePageComponent, 
-   
-  },
-  {
-    path: 'crates',
-    component:CratesComponent,
-    
-  },
-  {
-    path:'show-crates',
-    component:ShowCratesComponent,
-    
-  },
-  {
-    path:'wishlist',
-    component: WishlistComponent, 
-    
-  },
-  {
-    path: 'show-wishlist',
-    component:ShowWishlistComponent,
-    
-  },
-  
-    
-];
+
+
 
 @NgModule({
   declarations: [
@@ -56,9 +29,11 @@ const appRoutes: Routes = [
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes),
+    AppRoutingModule,
+    RouterModule.forRoot([]),
+    HttpClientModule, 
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-import { SharedService } from "../shared.service";
+
 
 @Component({
   selector: 'show-crates',
@@ -9,6 +9,7 @@ import { SharedService } from "../shared.service";
 })
 export class ShowCratesComponent implements OnInit {
   data:any;
+  
 
   constructor(private router:Router) { }
 
@@ -20,10 +21,7 @@ export class ShowCratesComponent implements OnInit {
   }
 
   
-  changePage() {
-    
-    this.router.navigate(["crates"]);
-  }
+  
 
 
 
