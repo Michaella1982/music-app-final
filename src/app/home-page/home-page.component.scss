@@ -24,6 +24,7 @@ $base-color:#ccffff;
   li {
     
       display: inline;
+
       
 
   }
@@ -67,9 +68,19 @@ $base-color:#ccffff;
     font-family:Lobster;
     padding: 16px 25px;
     border: none;
-    
-    
   }
+  
+  .btn-reset{
+    margin: 5px;
+    padding-top:5px;
+    color:rgb(4, 4, 36);
+    border-radius: 1em;
+    background-color:#ff9999;
+    font-family:Lobster;
+    padding: 16px 25px;
+    border: none;
+  }
+
   .btn-primary:hover{
     color:purple;
     

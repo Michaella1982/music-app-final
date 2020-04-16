@@ -5,14 +5,14 @@ h1{
     font: 150%;
     font-family:monospace;
     text-align:auto;
-    color:#000066;
+    color:rgb(4, 4, 36);
 }
 p{
   color:purple;
-  background-color:#ffffcc;
   text-align:auto;
   font-family:monospace;
 }
+
 
 input {
     width: 100%;
@@ -21,18 +21,14 @@ input {
     box-sizing: border-box;
     border-radius: 10px;
     font-family:monospace;
-  }
-.inputs{
-    background-color:#ffffcc;
 }
-.notes{
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border-radius: 10px;
+label{
     font-family:monospace;
 
+}
+
+.inputs{
+    background-color:#ffffcc;
 }
 
 .body{
@@ -43,30 +39,15 @@ input {
 
 }
 
-
-
-  .genre {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-  }
-.genre:hover  {
-    display: block;
-  }
   
 
-
+  
 .buttons-container{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   }
-
 
 .btn-primary {
   margin: 5px;
@@ -78,12 +59,12 @@ input {
   padding: 16px 25px;
   margin: 15px auto;
   border: none;
-  
-  
-}
-.btn-primary:hover{
-  color:purple;
-  
 }
 
-  
+.btn-primary:hover{
+  color:purple;
+}
+
+input.ng-invalid.ng-touched {
+    border:2px solid red;
+}

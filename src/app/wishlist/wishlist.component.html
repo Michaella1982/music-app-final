@@ -40,12 +40,13 @@
                             #artist="ngModel" required>
                         <span class="help-block" *ngIf="!artist.Valid && artist.touched">please enter a valid artist,
                             Homie.</span>
-
-                        <textarea class="comment-box" type="textarea" cols="30" rows="10" name="comments" rows="3"
-                            cols="30">What's the word, bird?</textarea>
+                        <br>
+                        <br>
+                        <label>Write it down!</label>
+                        <input type="text" id="notes" class="form-control" placeholder="what's the word, bird?"  cols="30" rows="10" name="comments">
                         <!--buttons-->
                         <div class="button-row">
-                            <button type="submit" class="btn btn-primary" [disabled]="!albumForm.valid"
+                            <button type="submit" class="btn btn-primary" [disabled]="!f.valid && pristine"
                                 [routerLink]="['/show-wishlist']">Save to Wishlist</button>
                             <button type="reset" class="btn btn-reset">Reset Form</button>
                         </div>

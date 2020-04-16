@@ -8,10 +8,11 @@ import { ShowWishlistComponent } from './show-wishlist/show-wishlist.component';
 
 const appRoutes: Routes = [
   
+   
     {
-      path: '',
-      component: HomePageComponent, 
-     
+        path: 'home-page',
+        component: HomePageComponent, 
+       
     },
     {
       path: 'crates',
@@ -33,6 +34,11 @@ const appRoutes: Routes = [
       component:ShowWishlistComponent,
       
     },
+    {
+        path: '',
+        component: HomePageComponent, 
+       
+      },
     
       
   ];

@@ -16,7 +16,7 @@
 <!--new crate form-->
     <div class="form-container">
         <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-            <div class="form-group">
+            
                 <!--input for title-->
 
                 <input type="text" id="title" placeholder="title" class="form-control" ngModel name="title"
@@ -42,19 +42,17 @@
                 <input type="text" placeholder="catalog number" class="form-control" [(ngModel)]="catalogNumber">
                 
                 
-                <input type="text" placeholder="genre" formControlName="Genre" [(ngModel)]="genre" ngModel name="genre">
+                <input type="text" placeholder="genre" class="form-control" formControlName="genre"[(ngModel)]="genre">
                 
              
              <!--buttons--> 
-                <div class="button-row">
-                    <button type="submit" class="btn btn-primary" [disabled]="!f.valid" routerLink="['/show-crates']"
-                        (click)="changeData()">
-                        Add to Crates
-                    </button>
+                <div class="button-row" element="button-row">
+                    <button type="submit" class="btn btn-primary" [disabled]="!f.valid && pristine"
+                        [routerLink]="['/show-crates']">Save to My Crates</button>
                 </div>
                
 
-            </div> 
+            
         </form>
     </div>
 </body>
