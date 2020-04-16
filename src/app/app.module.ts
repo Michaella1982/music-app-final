@@ -9,11 +9,12 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { ShowCratesComponent } from './show-crates/show-crates.component';
 import { ShowWishlistComponent } from './show-wishlist/show-wishlist.component';
 import { RouterModule } from '@angular/router';
+
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 
-
+    
 
 
 @NgModule({
@@ -23,15 +24,18 @@ import { AppRoutingModule } from './app-routing.module';
     CratesComponent,
     WishlistComponent,
     ShowCratesComponent,
-    ShowWishlistComponent
+    ShowWishlistComponent, 
+    
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    AppRoutingModule,
-    RouterModule.forRoot([]),
+    RouterModule,
     HttpClientModule, 
+    AppRoutingModule
+    
+    
   ],
   providers: [ ],
   bootstrap: [AppComponent]
