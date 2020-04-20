@@ -10,7 +10,7 @@ export class SharedService {
     
   
   title: '',
-  aritist:'',
+  artist:'',
   yearReleased: '',
   label: '',
   genre: '',

@@ -47,8 +47,8 @@
                 
              <!--buttons--> 
                 <div class="button-row" element="button-row">
-                    <button type="submit" class="btn btn-primary" [disabled]="!f.valid && pristine"
-                        [routerLink]="['/show-crates']" (click)="changeData()">Save to My Crates</button>
+                    <button type="submit" class="btn btn-primary" 
+                        [routerLink]="['/show-crates']" (click)="changeData()" [disabled]="!f.valid">Save to My Crates</button>
                         <button type="reset" class="btn btn-reset">Reset Form</button>
                 </div>
                 

@@ -1,3 +1,4 @@
+  
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -26,17 +27,13 @@ export class CratesComponent implements OnInit {
   data: any;
 
   
-
-  constructor(private router: Router, private sharedData: SharedService){
-    
-
-  }
+  constructor(private router: Router, private sharedData: SharedService) { }
   
   ngOnInit() {
-    this.sharedData.currentData.subscribe(data => this.data = data);
+    this.sharedData.currentData.subscribe(data => this.data = data); 
     
   }
-  changeData() {
+  changeData(data:any) {
     this.sharedData.changeData({
       
     title: 'the man who sold the world',
@@ -49,28 +46,4 @@ export class CratesComponent implements OnInit {
 
 }
 
- // onSubmit(){
-   // if(this.albumForm.valid){
-     // console.log("success! Form Submitted!");
-    //}this.albumForm.reset();
-  //}
- // onFormSubmit(){
-  //  this.isLoadingResults = true;
-    //this.api.addAlbum(this.albumForm.value)
-      //.subscribe ((res:any) => {
-       // const id = res._id;
-       // this.isLoadingResults= false;
-      //  this.router.navigate(['/show-crates']);
-      //}, (err: any) => {
-      //  console.log (err);
-      //  this.isLoadingResults = false;
-
-     // });
-
-//}
-  
-
-
-
-
-      
+    

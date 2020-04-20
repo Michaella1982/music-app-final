@@ -11,7 +11,15 @@ p{
   color:rgb(7, 0, 29);
   text-align:auto;
   font-family:monospace;
-  float:left;
+  
+}
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-family:monospace;
 }
 
 
