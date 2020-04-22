@@ -13,52 +13,38 @@
     <h1 class="headline">Update My Crates</h1>
 </header>
 
-<body class="body">
+<body>
     <!--new crate form-->
-    
-        <form (ngSubmit)="onSubmit()" f="ngForm" >
-            <div id="album-info" class="form-group">
-
+    <div class="form-container">
+        <form (ngSubmit)="onSubmit()" #f="ngForm">
+            <div id="album-info">
+                <div class="form-group">
                     <!--input for title-->
 
-                    <input type="text" id="title" placeholder="title" class="form-control" ngModel name="title"
-                        title="ngModel" required title>
-                    <span class="help-block" *ngIf="!title.valid && title.touched">please enter a valid title,
-                        Homie.</span>
-
+                    <input type="text" id="title" placeholder="title" class="form-control" ngModel name="title" #title="ngModel" required>
+                    <span class="help-block" *ngIf="!title.valid && title.touched">Please enter a valid title, Homie.</span>
 
                     <br>
-
                     <!-- input for artist-->
 
-                    <input type="text" id="artist" placeholder="artist" class="form-control" ngModel name="artist"
-                        artist="ngModel" required artist>
-                    <span class="help-block" *ngIf="!artist.valid && artist.touched">please enter a valid artist,
-                        Homie.</span>
+                    <input type="text" id="artist" placeholder="artist" class="form-control" ngModel name="artist" #artist="ngModel" required>
+                    <span class="help-block" *ngIf="!artist.valid && artist.touched">Please enter a valid artist, Homie.</span>
 
-                    <!--inputs for label, year of release, catalog number and genre-->
-                    <input type="text" placeholder="label" class="form-control" ngModel name="label" label="ngModel">
+                    <input type="text" placeholder="label" class="form-control" [(ngModel)]="label">
 
+                    <input type="text" placeholder="year released" class="form-control" [(ngModel)]="yearReleased">
 
-                    <input type="text" placeholder="year released" class="form-control" ngModel="yearReleased" yearReleased="ngModel">
+                    <input type="text" placeholder="catalog number" class="form-control" [(ngModel)]="catalogNumber">
 
+                    <input type="text" placeholder="genre" class="form-control" [(ngModel)]="genre">
+                </div>
+            </div>
+            <!--buttons-->
+            <div class="button-row" element="button-row">
+                <button type="submit" class="btn btn-primary" [routerLink]="['/show-crates']" (click)="changeData()" [disabled]="!f.valid">Save to My Crates</button>
 
-                    <input type="text" placeholder="catalog number" class="form-control" ngModel="catalogNumber" catalogNumber="ngModel">
-
-
-                    <input type="text" placeholder="genre" class="form-control" ngModel="genre" genre="ngModel">
-
-
-                    <!--submit and reset buttons-->
-                    <div class="button-row" element="button-row">
-                        <button type="submit" class="btn btn-primary" [routerLink]="['/show-crates']"
-                        (click)="changeData()" [disabled]="!f.valid" >Save to My Crates</button>
-                        <button type="reset" class="btn btn-reset" (click)="reset()">Reset Form</button>
-                    </div>
-
-
-                
+                <button type="reset" class="btn btn-reset">Reset Form</button>
             </div>
         </form>
-  
+    </div>
 </body>
