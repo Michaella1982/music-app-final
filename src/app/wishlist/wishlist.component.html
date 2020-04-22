@@ -14,18 +14,16 @@
 
 <body class="body">
     <!--crate form-->
-    <div class="form-group" formGroupName="wishlistData" novalidate>
+
+    <form class="form-group" [formGroup]="inputInfo" formGroupName="wishlistData" (ngSubmit)="onSubmit()" f="ngForm"novalidate>
         <p>a place to take notes on to-be-obtained music
         </p>
-        
-            <!--inputs-->
-            <div class="form-container">
-                <form (ngSubmit)="onSubmit()" f="ngForm"></form>
-            </div>
 
+        <!--inputs-->
+        <div class="form-container">
             <!--input for title-->
-            <input type="text" id="title" placeholder="title" class="form-control" ngModel name="title" title="ngModel"
-                required title>
+            <input type="text" id="title" placeholder="title" class="form-control" [formControl]="title"
+                formControlName="title" ngModel name="title" title="ngModel" required title>
             <span class="help-block" *ngIf="!title.valid && title.touched">please enter a valid title,
                 Homie.</span>
 
@@ -34,21 +32,24 @@
 
             <!-- input for artist-->
 
-            <input type="text" id="artist" placeholder="artist" class="form-control" ngModel name="artist"
-                artist="ngModel" required artist>
+            <input type="text" id="artist" placeholder="artist" class="form-control" [formControl]="artist"
+                formControlName="artist" ngModel name="artist" artist="ngModel" required artist>
+
             <span class="help-block" *ngIf="!artist.valid && artist.touched">please enter a valid artist,
                 Homie.</span>
             <br>
             <br>
             <label>Write it down!</label>
-            <input type="text" id="notes" class="form-control" placeholder="what's the word, bird?" cols="30" rows="10"
+            <input type="text" id="notes" class="form-control" placeholder="what's the word, bird?" 
                 name="comments">
             <!--buttons-->
             <div class="button-row">
-                <button type="submit" class="btn btn-primary" [disabled]="!f.valid"
-                    routerLink="['/show-wishlist']">Save to Wishlist</button>
-                <button type="reset" class="btn btn-reset">Reset Form</button>
+                <button type="submit" class="btn btn-primary" [disabled]="!f.valid" routerLink="['/show-wishlist']">Save
+                    to
+                    Wishlist</button>
+                <button type="reset" class="btn btn-reset" (click)="reset()">Reset Form</button>
             </div>
-        
-    </div>
+        </div>
+    </form>
+    
 </body>

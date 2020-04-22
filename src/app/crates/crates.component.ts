@@ -16,6 +16,9 @@ export class CratesComponent implements OnInit {
 
   
   constructor(private router: Router, private sharedData: SharedService) { }
+
+  public title= "";
+
   
   ngOnInit() {
     this.sharedData.currentData.subscribe(data => this.data = data); 
@@ -24,7 +27,8 @@ export class CratesComponent implements OnInit {
   changeData(data:any) {
   
       this.sharedData.changeData({
-      
+
+      //dummy data that shows on the show-crates page upon pressing the submit button
     title: 'the man who sold the world',
     artist:'davie Bowie',
     yearReleased: '1970',
