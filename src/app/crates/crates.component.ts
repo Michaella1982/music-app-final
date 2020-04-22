@@ -19,7 +19,7 @@ export class CratesComponent implements OnInit {
   
   ngOnInit() {
     this.sharedData.currentData.subscribe(data => this.data = data); 
-    
+   
   }
   changeData(data:any) {
   

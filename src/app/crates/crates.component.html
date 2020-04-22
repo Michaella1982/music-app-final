@@ -16,17 +16,22 @@
 <body class="body">
     <!--new crate form-->
     <div class="form-container">
-        <form (ngSubmit)="onSubmit()" f="ngForm">
+        <form [formGroup]="form-container"
+        (ngSubmit)="onSubmit()" f="ngForm">
             <div id="album-info">
                 <div class="form-group">
 
-                    <!--input for title-->
+                    <!--input for title
 
                     <input type="text" id="title" placeholder="title" class="form-control" ngModel name="title"
                         title="ngModel" required title>
                     <span class="help-block" *ngIf="!title.valid && title.touched">please enter a valid title,
-                        Homie.</span>
-
+                        Homie.</span>-->
+                    <input type="text" formControlName="title" placeHolder= "title" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && this.form-container.controls.title.errors }"/>
+                <div *ngIf="submitted && this.form-container.controls.title.errors" class="invalid-feedback">
+                    <div *ngIf="this.form-container.controls.title.errors.required">You gotta enter a title, Homie.</div>
+                </div>
 
                     <br>
 
@@ -38,16 +43,16 @@
                         Homie.</span>
 
                     <!--inputs for label, year of release, catalog number and genre-->
-                    <input type="text" placeholder="label" class="form-control" [(ngModel)] name="label">
+                    <input type="text" placeholder="label" class="form-control" ngModel name="label" label="ngModel">
 
 
-                    <input type="text" placeholder="year released" class="form-control" [(ngModel)]="yearReleased">
+                    <input type="text" placeholder="year released" class="form-control" ngModel name="yearReleased" yearReleased="ngModel">
 
 
-                    <input type="text" placeholder="catalog number" class="form-control" [(ngModel)]="catalogNumber">
+                    <input type="text" placeholder="catalog number" class="form-control" ngModel name="catalogNumber" catalogNumber="ngModel">
 
 
-                    <input type="text" placeholder="genre" class="form-control" [(ngModel)]="genre">
+                    <input type="text" placeholder="genre" class="form-control" ngModel name="genre" genre="ngModel">
 
 
                     <!--submit and reset buttons-->
