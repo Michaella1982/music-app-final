@@ -10,7 +10,7 @@ import { ShowWishlistComponent } from './show-wishlist/show-wishlist.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { CreditsContactMeComponent } from './credits-contact-me/credits-contact-me.component';
+
 import { RouterTestingModule } from '@angular/router/testing';
 
 
@@ -24,8 +24,8 @@ import { RouterTestingModule } from '@angular/router/testing';
     CratesComponent,
     WishlistComponent,
     ShowCratesComponent,
-    ShowWishlistComponent,
-    CreditsContactMeComponent, 
+    ShowWishlistComponent
+    
     
     
   ],
