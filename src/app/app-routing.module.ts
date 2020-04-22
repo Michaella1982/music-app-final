@@ -5,6 +5,7 @@ import { CratesComponent } from './crates/crates.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ShowCratesComponent } from './show-crates/show-crates.component';
 import { ShowWishlistComponent } from './show-wishlist/show-wishlist.component';
+import { CreditsContactMeComponent } from './credits-contact-me/credits-contact-me.component';
 
 const appRoutes: Routes = [
   
@@ -34,6 +35,12 @@ const appRoutes: Routes = [
       component:ShowWishlistComponent,
       
     },
+    {
+      path: 'credits-contact-me',
+      component:CreditsContactMeComponent,
+      
+    },
+    
     {
         path: '',
         component: HomePageComponent, 

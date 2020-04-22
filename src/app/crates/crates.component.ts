@@ -1,20 +1,8 @@
   
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
-import { FormControl, FormGroup } from '@angular/forms';
-import { FormsModule, NgModel } from '@angular/forms';
+import { FormGroup, FormsModule, NgModel, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { Router, NavigationStart } from '@angular/router';
-
-
-import { filter } from "rxjs/operators";
-import { Observable } from "rxjs"; 
-import { NgForm } from '@angular/forms';
 import { SharedService } from "../shared.service"
-
-
-
-
 
 @Component({
   selector: 'app-crates',
@@ -34,7 +22,8 @@ export class CratesComponent implements OnInit {
     
   }
   changeData(data:any) {
-    this.sharedData.changeData({
+  
+      this.sharedData.changeData({
       
     title: 'the man who sold the world',
     artist:'davie Bowie',

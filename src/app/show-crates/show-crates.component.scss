@@ -14,6 +14,7 @@ p{
 }
 
 
+
 input {
     width: 100%;
     padding: 12px 20px;
@@ -23,8 +24,11 @@ input {
     font-family:monospace;
 }
 label{
+    padding-bottom: 10px;
+    font: 150%;
     font-family:monospace;
-
+    text-align:auto;
+    color:rgb(8, 8, 66);
 }
 
 .inputs{

@@ -14,46 +14,41 @@
 
 <body class="body">
     <!--crate form-->
-
-    <div [formGroup]="wishlistData">
-        <div class="form-group" formGroupName="" novalidate>
-            <p>a place to take notes on to-be-obtained music</p>
-        </div>
-        <form [formGroup]="WishlistForm" (ngSubmit)="onSubmit()">
+    <div class="form-group" formGroupName="wishlistData" novalidate>
+        <p>a place to take notes on to-be-obtained music
+        </p>
+        
             <!--inputs-->
             <div class="form-container">
-                <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-                    <div class="form-group">
-                        <!--input for title-->
-
-                        <input type="text" id="title" placeholder="title" class="form-control" ngModel name="title"
-                            #title="ngModel" required>
-                        <span class="help-block" *ngIf="!title.Valid && title.touched">please enter a valid title,
-                            Homie.</span>
-
-
-                        <br>
-
-                        <!-- input for artist-->
-
-                        <input type="text" id="artist" placeholder="artist" class="form-control" ngModel name="artist"
-                            #artist="ngModel" required>
-                        <span class="help-block" *ngIf="!artist.Valid && artist.touched">please enter a valid artist,
-                            Homie.</span>
-                        <br>
-                        <br>
-                        <label>Write it down!</label>
-                        <input type="text" id="notes" class="form-control" placeholder="what's the word, bird?"  cols="30" rows="10" name="comments">
-                        <!--buttons-->
-                        <div class="button-row">
-                            <button type="submit" class="btn btn-primary" [disabled]="!f.valid && pristine"
-                                [routerLink]="['/show-wishlist']">Save to Wishlist</button>
-                                <button type="reset" class="btn btn-reset">Reset Form</button>
-                        </div>
-                    </div>
-
-                </form>
+                <form (ngSubmit)="onSubmit()" f="ngForm"></form>
             </div>
-        </form>
+
+            <!--input for title-->
+            <input type="text" id="title" placeholder="title" class="form-control" ngModel name="title" title="ngModel"
+                required title>
+            <span class="help-block" *ngIf="!title.valid && title.touched">please enter a valid title,
+                Homie.</span>
+
+
+            <br>
+
+            <!-- input for artist-->
+
+            <input type="text" id="artist" placeholder="artist" class="form-control" ngModel name="artist"
+                artist="ngModel" required artist>
+            <span class="help-block" *ngIf="!artist.valid && artist.touched">please enter a valid artist,
+                Homie.</span>
+            <br>
+            <br>
+            <label>Write it down!</label>
+            <input type="text" id="notes" class="form-control" placeholder="what's the word, bird?" cols="30" rows="10"
+                name="comments">
+            <!--buttons-->
+            <div class="button-row">
+                <button type="submit" class="btn btn-primary" [disabled]="!f.valid"
+                    routerLink="['/show-wishlist']">Save to Wishlist</button>
+                <button type="reset" class="btn btn-reset">Reset Form</button>
+            </div>
+        
     </div>
 </body>
